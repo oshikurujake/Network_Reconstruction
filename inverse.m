@@ -1,7 +1,7 @@
 warning('off')
 clear all
 % Configeration of the resistor grid
-hn = 4;
+hn = 5;
 vn = hn;
 R = 100;
 rn = numel(ones([vn,hn-1]))+numel(ones([vn-1,hn]));
@@ -23,7 +23,7 @@ end
 % Forward solution using kirchhoff method
 [U_meas,boundary_ratio,bn] = kirchhoff_grid(hn,vn,HR,VR);
 % Hyperparameter
-hyper =0.02% linspace(2e-3,1e-1,50);
+hyper =0.03% linspace(2e-3,1e-1,50);
 accu_error = [];
 % Set a small pentrubation for each resistance 0.1 ohm
 delta = mean(all_r,'all')/0.001;
