@@ -26,7 +26,7 @@ end
 hyper = 0.03%linspace(2e-3,1e-1,50);
 accu_error = [];
 % Set a small pentrubation for each resistance 0.1 ohm
-delta = mean(all_r,'all')/10000;
+delta = mean(all_r,'all')/1000;
 for lambda = hyper
     % Count how many interations
     count = 1;
