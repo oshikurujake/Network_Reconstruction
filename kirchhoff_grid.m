@@ -97,6 +97,9 @@ for i =1:length(bound_nodes)
         II(g) = -1;
         P = zeros(total_nodes,1);
         P = CM\II;
+        if isinf(inv(CM(1,1))) ==  1
+            P = pinv(CM)*II
+        end
         tv = 1;
         % Calculate the voltage
         while tv <= length(bound_nodes)
